@@ -30,5 +30,10 @@ public class PlayerController : BassController
         {
             lookDirection = lookDirection.normalized;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animationHandler.Jump();
+        }
     }
 }
