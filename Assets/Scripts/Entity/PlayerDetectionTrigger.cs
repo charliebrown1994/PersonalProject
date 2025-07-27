@@ -9,7 +9,7 @@ public class PlayerDetectionTrigger : MonoBehaviour
     void Update()
     {
         // 조건식으로 상호작용 하기
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
         {
             // 메서드 실행
             Interact();
