@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDetectionTrigger : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PlayerDetectionTrigger : MonoBehaviour
     private void Interact()
     {
         Debug.Log("NPC와 상호작용 중...");
+        SceneManager.LoadScene("TopDownScene");
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -26,7 +28,6 @@ public class PlayerDetectionTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
-            Debug.Log("상호작용 가능: E키를 눌러보세요.");
         }
     }
 
@@ -35,7 +36,6 @@ public class PlayerDetectionTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
-            Debug.Log("NPC로부터 멀어짐.");
         }
     }
 }
