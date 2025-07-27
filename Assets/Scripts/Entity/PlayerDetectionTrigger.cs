@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerDetectionTrigger : MonoBehaviour
 {
     private bool isPlayerInRange = false; // bool값 선언 Player가 번위에 들어 왔는지 확인하는 변수
+    public GameObject interactionHintUI;
 
     void Update()
     {
@@ -28,6 +29,9 @@ public class PlayerDetectionTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
+
+            if (interactionHintUI != null)
+                interactionHintUI.SetActive(true);
         }
     }
 
@@ -36,6 +40,9 @@ public class PlayerDetectionTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
+
+            if (interactionHintUI != null)
+                interactionHintUI.SetActive(false);
         }
     }
 }

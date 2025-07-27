@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace MiniGame.TopDown
@@ -24,7 +25,7 @@ public class HomeUI : BaseUI
 
     public void OnClickExitButton()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainScene");
     }
 
     protected override UIState GetUIState()
